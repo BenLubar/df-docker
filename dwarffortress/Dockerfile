@@ -11,7 +11,7 @@ RUN dpkg --add-architecture i386 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
 
-ENV DF_VERSION 40_14
+ENV DF_VERSION 40_15
 
 RUN mkdir -p /df_linux \
 	&& curl -SL http://www.bay12games.com/dwarves/df_${DF_VERSION}_linux.tar.bz2 \
