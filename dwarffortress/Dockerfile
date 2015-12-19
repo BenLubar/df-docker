@@ -29,7 +29,10 @@ RUN mkdir -p /df_linux \
 		-e 's/\[TRUETYPE:[0-9]*\]/[TRUETYPE:NO]/' \
 		-e 's/\[SOUND:YES\]/[SOUND:NO]/' \
 		-e 's/\[INTRO:YES\]/[INTRO:NO]/' \
-		/df_linux/data/init/init.txt
+		/df_linux/data/init/init.txt \
+	&& sed -i \
+		-e 's/^\.\/libs\/Dwarf_Fortress/exec \0/' \
+		/df_linux/df
 
 WORKDIR /df_linux
 VOLUME /df_linux/data/save
