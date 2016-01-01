@@ -1,4 +1,4 @@
-FROM benlubar/dwarffortress:df-0.42.03
+FROM benlubar/dwarffortress:df-0.42.04
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 	cmake \
@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
 
-RUN git clone -b 0.42.03-alpha1 --recursive --depth=1 https://github.com/DFHack/dfhack.git /dfhack \
+RUN git clone -b 0.42.04-alpha1 --recursive --depth=1 https://github.com/DFHack/dfhack.git /dfhack \
 && mkdir -p /dfhack/build-docker \
 && cd /dfhack/build-docker \
 && cmake -DCMAKE_INSTALL_PREFIX:STRING=/df_linux -DZLIB_LIBRARY:STRING=/usr/lib/i386-linux-gnu/libz.so /dfhack \
