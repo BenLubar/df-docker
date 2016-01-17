@@ -14,7 +14,7 @@ RUN dpkg --add-architecture i386 \
 RUN locale-gen en_US.UTF-8
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 
-ENV DF_VERSION 42_04
+ENV DF_VERSION 42_05
 
 RUN mkdir -p /df_linux \
 	&& curl -SL http://www.bay12games.com/dwarves/df_${DF_VERSION}_linux.tar.bz2 \
