@@ -2,6 +2,7 @@ FROM ubuntu
 
 RUN dpkg --add-architecture i386 \
 && apt-get update && apt-get install -y --no-install-recommends \
+	bzip2 \
 	curl \
 	libglu1-mesa:i386 \
 	libgtk2.0-0:i386 \
