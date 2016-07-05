@@ -1,21 +1,20 @@
 FROM ubuntu
 
-RUN dpkg --add-architecture i386 \
-&& apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
 	bzip2 \
 	curl \
-	libglu1-mesa:i386 \
-	libgtk2.0-0:i386 \
-	libopenal1:i386 \
-	libsdl-image1.2:i386 \
-	libsdl-ttf2.0-0:i386 \
+	libglu1-mesa \
+	libgtk2.0-0 \
+	libopenal1 \
+	libsdl-image1.2 \
+	libsdl-ttf2.0-0 \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
 
 RUN locale-gen en_US.UTF-8
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 
-ENV DF_VERSION 43_04
+ENV DF_VERSION 43_05
 
 RUN mkdir -p /df_linux \
 	&& curl -SL http://www.bay12games.com/dwarves/df_${DF_VERSION}_linux.tar.bz2 \
