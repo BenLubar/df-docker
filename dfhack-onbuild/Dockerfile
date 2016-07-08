@@ -5,13 +5,13 @@ ONBUILD COPY . /dfhack-plugin-onbuild
 ONBUILD RUN apt-get update && apt-get install -y --no-install-recommends \
 	ca-certificates \
 	cmake \
-	g++-multilib \
-	gcc-multilib \
+	g++ \
+	gcc \
 	git \
 	libxml-libxml-perl \
 	libxml-libxslt-perl \
 	make \
-	zlib1g-dev:i386 \
+	zlib1g-dev \
 && git clone --recursive --depth=1 -b develop https://github.com/DFHack/dfhack.git /dfhack \
 && cd /dfhack \
 && git tag dfhack-onbuild \
@@ -25,13 +25,13 @@ ONBUILD RUN apt-get update && apt-get install -y --no-install-recommends \
 && apt-get purge -y \
 	ca-certificates \
 	cmake \
-	g++-multilib \
-	gcc-multilib \
+	g++ \
+	gcc \
 	git \
 	libxml-libxml-perl \
 	libxml-libxslt-perl \
 	make \
-	zlib1g-dev:i386 \
+	zlib1g-dev \
 && apt-get autoremove -y \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
