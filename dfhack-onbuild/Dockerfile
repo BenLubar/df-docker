@@ -5,8 +5,8 @@ ONBUILD COPY . /dfhack-plugin-onbuild
 ONBUILD RUN apt-get update && apt-get install -y --no-install-recommends \
 	ca-certificates \
 	cmake \
-	g++ \
-	gcc \
+	g++-4.8 \
+	gcc-4.8 \
 	git \
 	libxml-libxml-perl \
 	libxml-libxslt-perl \
@@ -19,14 +19,14 @@ ONBUILD RUN apt-get update && apt-get install -y --no-install-recommends \
 && echo 'add_subdirectory(onbuild)' >> /dfhack/plugins/CMakeLists.custom.txt \
 && mkdir -p /dfhack/build-docker \
 && cd /dfhack/build-docker \
-&& cmake -DCMAKE_INSTALL_PREFIX:STRING=/df_linux .. \
+&& cmake -DCMAKE_INSTALL_PREFIX:STRING=/df_linux -DDFHACK_BUILD_ARCH=64 .. \
 && make -j3 install \
 && rm -rf /dfhack \
 && apt-get purge -y \
 	ca-certificates \
 	cmake \
-	g++ \
-	gcc \
+	g++-4.8 \
+	gcc-4.8 \
 	git \
 	libxml-libxml-perl \
 	libxml-libxslt-perl \

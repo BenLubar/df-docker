@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	libopenal1 \
 	libsdl-image1.2 \
 	libsdl-ttf2.0-0 \
+	locales \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
 
