@@ -11,16 +11,16 @@ RUN apt-get update \
     libsdl-image1.2 \
     libsdl-ttf2.0-0 \
     locales \
+    unzip \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-RUN locale-gen en_US.UTF-8
-ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 \
+    DF_VERSION=44_07 \
+    DF_ARCHIVE_SHA1=d75e935dc49a3c57f3a0763720f8a2ba24a9c0e2
 
-ENV DF_VERSION 44_07
-ENV DF_ARCHIVE_SHA1 d75e935dc49a3c57f3a0763720f8a2ba24a9c0e2
-
-RUN mkdir -p /df_linux \
+RUN LC_ALL=C locale-gen en_US.UTF-8 \
+ && mkdir -p /df_linux \
  && cd / \
  && curl -LSo /df_linux.tar.bz2 http://www.bay12games.com/dwarves/df_${DF_VERSION}_linux.tar.bz2 \
  && echo "${DF_ARCHIVE_SHA1} *df_linux.tar.bz2" | sha1sum -c \
