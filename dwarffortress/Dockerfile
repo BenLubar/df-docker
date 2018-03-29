@@ -16,7 +16,7 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 \
-    DF_VERSION=44_08
+    DF_VERSION=44_08 \
     DF_ARCHIVE_SHA1=aad90ccd4664c98612b6686a9fd3ae665552677e
 
 RUN LC_ALL=C locale-gen en_US.UTF-8 \
