@@ -4,20 +4,20 @@ Important note: if the host is running an OS with seccomp, such as Ubuntu 15.10 
 
 ```
 {
-  "names": [
-    "personality"
-  ],
-  "action": "SCMP_ACT_ALLOW",
-  "args": [
-    {
-      "index": 0,
-      "value": 262144,
-      "valueTwo": 0,
-      "op": "SCMP_CMP_EQ"
-    }
-  ],
-  "comment": "[ADDR_NO_RANDOMIZE] Allow disabling ASLR (Address Space Layout Randomization), which DFHack needs in order to run.",
-  "includes": {},
-  "excludes": {}
+	"names": [
+		"personality"
+	],
+	"action": "SCMP_ACT_ALLOW",
+	"args": [
+		{
+			"index": 0,
+			"value": 262144,
+			"valueTwo": 0,
+			"op": "SCMP_CMP_EQ"
+		}
+	],
+	"comment": "[ADDR_NO_RANDOMIZE] Allow disabling ASLR (Address Space Layout Randomization), which DFHack needs in order to run.",
+	"includes": {},
+	"excludes": {}
 },
 ```
