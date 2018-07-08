@@ -1,8 +1,8 @@
-FROM benlubar/dwarffortress:df-0.44.11
+FROM benlubar/dwarffortress:df-0.44.12
 
-ENV DFHACK_VERSION=0.44.11-beta2.1 \
-    DFHACK_ARCHIVE_NAME=dfhack-0.44.11-beta2.1-Linux-64-gcc-4.8.tar.bz2 \
-    DFHACK_ARCHIVE_SHA1=3d5fe059c2f74fb1d7cfec6708d59a3a175b4984
+ENV DFHACK_VERSION=0.44.12-alpha1 \
+    DFHACK_ARCHIVE_NAME=dfhack-0.44.12-alpha1-Linux-64-gcc-4.8.tar.bz2 \
+    DFHACK_ARCHIVE_SHA1=a22184e08c1278cc502f6580d420f1a3501660c8
 
 RUN curl -LSo dfhack.tar.bz2 https://github.com/DFHack/dfhack/releases/download/${DFHACK_VERSION}/${DFHACK_ARCHIVE_NAME} \
  && echo "${DFHACK_ARCHIVE_SHA1} *dfhack.tar.bz2" | sha1sum -c \
