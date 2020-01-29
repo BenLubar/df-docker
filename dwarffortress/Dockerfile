@@ -16,14 +16,14 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 \
-    DF_VERSION=44_12 \
-    DF_ARCHIVE_SHA1=f6157e52239a3edb9f90fae28994049bffcf1d72
+    DF_VERSION=47_01 \
+    DF_ARCHIVE_SHA256=01f50aa444f372ac29a440929d095306a06f5b7bae221fa917edee77dd5c7ef1
 
 RUN LC_ALL=C locale-gen en_US.UTF-8 \
  && mkdir -p /df_linux \
  && cd / \
  && curl -LSo /df_linux.tar.bz2 http://www.bay12games.com/dwarves/df_${DF_VERSION}_linux.tar.bz2 \
- && echo "${DF_ARCHIVE_SHA1} *df_linux.tar.bz2" | sha1sum -c \
+ && echo "${DF_ARCHIVE_SHA256} *df_linux.tar.bz2" | sha256sum -c \
  && tar -xjf /df_linux.tar.bz2 df_linux \
  && rm df_linux.tar.bz2 \
  && chmod -x+X -R /df_linux \
