@@ -16,8 +16,8 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 \
-    DF_VERSION=47_03 \
-    DF_ARCHIVE_SHA256=1a33a1be06f6cdd08f94e39c4433ab35dc8ad0a7e319e8d19436f7d473ed785e
+    DF_VERSION=47_04 \
+    DF_ARCHIVE_SHA256=1de5872bf3ac32906a0082129ec88d6879b6ac7059a3513607d628090b1328e6
 
 RUN LC_ALL=C locale-gen en_US.UTF-8 \
  && mkdir -p /df_linux \
