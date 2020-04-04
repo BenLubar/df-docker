@@ -1,13 +1,14 @@
-FROM benlubar/dwarffortress:df-0.47.03
+FROM benlubar/dwarffortress:df-0.47.04
 
-ENV DFHACK_VERSION=0.47.03-beta1 \
-    DFHACK_ARCHIVE_NAME=dfhack-0.47.03-beta1-Linux-64-gcc-4.8.tar.bz2 \
-    DFHACK_ARCHIVE_SHA1=06805a9b7902e47d29b3c75d9ef44177d39b0705
+ENV DFHACK_VERSION=0.47.04-beta1 \
+    DFHACK_ARCHIVE_NAME=dfhack-0.47.04-beta1-Linux-64bit-gcc-4.8.tar.bz2 \
+    DFHACK_ARCHIVE_SHA1=331be9952e0d53d90a7745b67b8118b59bcc389c
 
 RUN curl -LSo dfhack.tar.bz2 https://github.com/DFHack/dfhack/releases/download/${DFHACK_VERSION}/${DFHACK_ARCHIVE_NAME} \
  && echo "${DFHACK_ARCHIVE_SHA1} *dfhack.tar.bz2" | sha1sum -c \
  && tar -xjvf dfhack.tar.bz2 \
  && rm -rf dfhack.tar.bz2 stonesense hack/plugins/stonesense.plug.so \
+ && echo "{\"hide\":true}" > dfhack-config/prerelease-warning.json \
  && echo "if ! setarch x86_64 -R grep -q 00040000 /proc/self/personality; then echo 'Access to the ADDR_NO_RANDOMIZE personality is required for DFHack to run.'; echo 'See https://github.com/BenLubar/df-docker#readme for details.'; exit 2; fi" > distro_fixes.sh
 
 CMD ["./dfhack"]
