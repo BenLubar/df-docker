@@ -1,12 +1,12 @@
-FROM benlubar/dwarffortress:dfhack-0.47.04-beta1
+FROM benlubar/dwarffortress:dfhack-0.47.04-r1
 
-ENV DF_AI_VERSION=0.47.04-beta1 \
-    DF_AI_ARCHIVE_NAME=df-ai-0.47.04-beta1-linux-64-4.8.tar.gz \
-    DF_AI_ARCHIVE_SHA1=ef45887c9f0537a60f950d217159a0431f9662c3 \
-    DF_AI_ASSETS_SHA1=2e97913cb531a8668895f181745276c6a749d58d \
-    WEBLEGENDS_VERSION=0.47.04-beta1 \
-    WEBLEGENDS_ARCHIVE_NAME=weblegends-0.47.04-beta1-linux-64-4.8.tar.gz \
-    WEBLEGENDS_ARCHIVE_SHA1=832b64d7ec2ae57483602552f2ac62ad6c0f6f42
+ENV DF_AI_VERSION=0.47.04-r1 \
+    DF_AI_ARCHIVE_NAME=df-ai-0.47.04-r1-linux-64-4.8.tar.gz \
+    DF_AI_ARCHIVE_SHA1=3f62b95eeda405a2a718d0c1845565d04a569688 \
+    DF_AI_ASSETS_SHA1=0c3564465ecd481dbe3d56610318087c3494fed2 \
+    WEBLEGENDS_VERSION=0.47.04-r1 \
+    WEBLEGENDS_ARCHIVE_NAME=weblegends-0.47.04-r1-linux-64-4.8.tar.gz \
+    WEBLEGENDS_ARCHIVE_SHA1=14d668a535d30f77e0f4858b0d4e7767a72b64bc
 
 RUN curl -LSo df-ai.tar.gz https://github.com/BenLubar/df-ai/releases/download/${DF_AI_VERSION}/${DF_AI_ARCHIVE_NAME} \
  && curl -LSo df-ai-assets.zip https://github.com/BenLubar/df-ai/releases/download/${DF_AI_VERSION}/df-ai-assets.zip \
