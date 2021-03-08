@@ -7,6 +7,7 @@ RUN apt-get update \
     curl \
     libglu1-mesa \
     libgtk2.0-0 \
+    libncursesw5 \
     libopenal1 \
     libsdl-image1.2 \
     libsdl-ttf2.0-0 \
